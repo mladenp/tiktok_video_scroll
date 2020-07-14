@@ -9,7 +9,7 @@ const Feed = ({ play, item }) => {
     <>
       <LinearGradient
         colors={['rgba(0,0,0,.3)', 'transparent']}
-        style={styles.gradient}
+        style={styles.gradient1}
       />
       <View style={styles.container}>
         <Video
@@ -29,7 +29,7 @@ const Feed = ({ play, item }) => {
       <Text
         style={{
           textAlign: 'center',
-          fontSize: '15px',
+          fontSize: '18px',
         }}
       >
         Lorem Ipsum is simply dummy text

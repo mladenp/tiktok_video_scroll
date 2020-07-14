@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Header, Text } from 'react-native';
 
 import ViewPager from '@react-native-community/viewpager';
 
 import server from '../../../server.json';
 import Feed from './Feed/index';
 
-import { Header, Text, Tab } from './styles';
 
-const Home: React.FC = () => {
+const Home = () => {
   const [tab, setTab] = useState(1);
   const [active, setActive] = useState(0);
   return (
     <View style={styles.container}>
-      <Header>
-        <Tab onPress={() => setTab(1)}>
-          <Text active={tab === 1}>Feed</Text>
-        </Tab>
-      </Header>
+        <Text> FEED </Text>
       <ViewPager
         onPageSelected={e => {
           setActive(e.nativeEvent.position);
