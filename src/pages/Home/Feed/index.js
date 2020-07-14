@@ -13,7 +13,7 @@ const Feed = ({ play, item }) => {
       />
       <View style={styles.container}>
         <Video
-          source={{ uri: item.uri }}
+          source={{ uri: item }}
           rate={1.0}
           volume={1.0}
           isMuted={false}
