@@ -1,25 +1,21 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import ViewPager from '@react-native-community/viewpager';
 
 import server from '../../../server.json';
-import Feed from './Feed';
+import Feed from './Feed/index';
 
-import { Container, Header, Text, Tab, Separator } from './styles';
+import { Header, Text, Tab } from './styles';
 
 const Home: React.FC = () => {
   const [tab, setTab] = useState(1);
   const [active, setActive] = useState(0);
   return (
-    <Container>
+    <View style={styles.container}>
       <Header>
         <Tab onPress={() => setTab(1)}>
-          <Text active={tab === 1}>Following</Text>
-        </Tab>
-        <Separator>|</Separator>
-        <Tab onPress={() => setTab(2)}>
-          <Text active={tab === 2}>For You</Text>
+          <Text active={tab === 1}>Feed</Text>
         </Tab>
       </Header>
       <ViewPager
@@ -36,8 +32,17 @@ const Home: React.FC = () => {
           </View>
         ))}
       </ViewPager>
-    </Container>
+    </View>
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    zIndex: -1,
+  },
+});
 export default Home;
