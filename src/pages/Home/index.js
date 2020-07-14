@@ -8,21 +8,25 @@ import Feed from './Feed/index';
 
 const Home = () => {
   console.log('home')
-  const [tab, setTab] = useState(1);
   const [active, setActive] = useState(0);
   const [videos, setVideos] = useState([])
 
 
   useEffect(() => {
-    const res = fetch('https://api.ellorem.xyz/public/mock/tik-tok-feed?start=12&perPage=8')
+    console.log('fetch')
+    const res = fetch('https://api.ellorem.xyz/public/mock/tik-tok-feed?start=12&perPage=3')
       .then((res) => res.json())
       .then((res) => {
         const urls = res.data.items.map((item) => {
           return item.videos[0].videoFormats.video[1].presignedUrl
         })
-
-        console.log('urls', urls)
-        setVideos(urls)
+        const origUrls = [
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+          "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+        ]
+        setVideos(origUrls)
       })
   }, [])
   return (
