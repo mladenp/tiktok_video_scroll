@@ -29,7 +29,9 @@ const Feed = ({ play, item }) => {
       <Text
         style={{
           textAlign: 'center',
-          fontSize: '18px',
+          fontSize: 18,
+          color: '#ffffff',
+          marginTop: 20
         }}
       >
         Lorem Ipsum is simply dummy text
